@@ -1,0 +1,44 @@
+1. Layers, all 4 cases use no regularizer, relu6, learning rate = 0.003 and AdamOptimizer
+Single layer, 256 features in the layer after 500 epochs: Accuracy: 0.541279 = 54.12%, filename: single_layer.py
+2 layers, 256 features in both layers after 500 epochs: Accuracy: 0.580645   = 58.06%, filename: code.py
+3 layers, 256 features in all layers after 500 epochs: Accuracy: 0.455987 = 45.60%, code: three-layer.py
+3 layers, 256 features in all layers after 1000 epochs: Accuracy: 0.539092 = 53.91%
+
+
+2. Features, all use 2 layers and 500 epochs:
+256 features in both layers: Accuracy: 0.580645 = 58.06%, filename: code.py
+128, 256 layers: Accuracy: 0.529251 = 52.92%, filename: 128 features.py
+512, 256 layers: Accuracy: 0.651722 = 65.12%, filename: 512features.py
+512, 512 layers: Accuracy: 0.552214 = 55.22%, filename: both512features.py
+1024,256 layers: Accuracy: 0.659377 = 65.94%, filename: 1024features.py
+
+3. hidden function, all use 1024 features in first layer, 256 in 2nd layer, learning rate = 0.0-103
+Sigmoid: Accuracy: 0.659377 = 65.94%, filename: 1024features.py
+relu6  : Accuracy: 0.426463 = 42.65%, filename: relu6.py
+tanh   : Accuracy: 0.442318 = 44.23%, filename: tanh.py
+
+4. different learning rates, everything else same as sigmoid code in Q3.
+0.003 : Accuracy: 0.659377 = 65.94%, filename: 1024features.py
+0.001 : Accuracy: 0.656096 = 65.61%, filename: rate001.py (training error much lower than with rate 0.003, will prefer 0.001 over 0.003)
+0.01  : Accuracy: 0.656096 = 65.61%, filename: rate001.py (didn't even train much.)
+
+5. Different regularizers:
+No regularizer: Accuracy: 0.656096 = 65.61%, filename: rate001.py
+L2 regularizer: Accuracy: 0.714598  = 71.46%, filename: l2_final.py (l2.py has a basic version of L2 regularization and gives accuracy of 70.5%)
+Dropout       : Accuracy: 0.621651 = 62.16%, filename: dropout.py
+Both          : Accuracy: 0.632039 = 63.20%, filename: dropoutandl2.py
+
+
+
+IMPORTANT:
+
+Regarding running the files. The traind model is saved in the mile model.ckpt.
+
+To check for a single file, use the script load.py in the fashion python load.py <image-address>. It processes the image in itself and gives probabilities separated by space.
+
+To train the data. The pre-processing is done using training.sh. It needs the folders train and valid inside the same directory and it creates the directories train_small and
+valid_small with the processed images which are 80x80.
+
+The training and saving script is final.py. It saves the model after running and verifying. 
+
+link to the folder:
