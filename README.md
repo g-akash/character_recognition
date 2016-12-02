@@ -1,8 +1,4 @@
-The details of the team members are as follows:
-
-Akash Garg - 130070060
-Shubham Yadav - 130050003
-Nishant Gaurav - 130050036
+You can obtain the final trained model and train and testing data form the following links.
 
 Model: https://drive.google.com/open?id=0Bxm3VyXTBAxheU9QcjlIOFZ3Ymc
 
